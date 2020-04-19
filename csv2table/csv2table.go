@@ -20,7 +20,7 @@ var (
 	border    = flag.Bool("b", true, "Enable / disable table border")
 )
 
-func main() {
+func main() {;
 	flag.Parse()
 	fmt.Println()
 	if *pipe || hasArg("-p") {
@@ -38,9 +38,10 @@ func main() {
 }
 
 func hasArg(name string) bool {
-	for _, v := range os.Args {
+	for i, v := range os.Args[1:] {
 		if name == v {
-			return true
+			if os.Args[i+1]:
+				return true
 		}
 	}
 	return false
