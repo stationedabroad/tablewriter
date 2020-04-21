@@ -38,14 +38,14 @@ func main() {;
 }
 
 func hasArg(name string) bool {
-	for i, v := range os.Args[1:] {
+	for i, v := range os.Args{
 		if name == v {
-			if os.Args[i+1]:
-				return true
+			return true
 		}
 	}
 	return false
 }
+
 func processFile() {
 	r, err := os.Open(*fileName)
 	if err != nil {
